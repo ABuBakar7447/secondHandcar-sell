@@ -25,7 +25,7 @@ const LogIn = () => {
                     <input type="submit" className="btn btn-primary" value="Login" />
                 </div>
             </form>
-            <p className='text-center'>Don't have any account?please <Link className='underline font-bold text-red-700' to='/signup'>Sign Up.</Link></p>
+            <p className='text-center'>Don't have any account?please <Link className='underline font-bold text-red-700' to='/signin'>Sign Up.</Link></p>
             </div>
         </div>
     </div>
