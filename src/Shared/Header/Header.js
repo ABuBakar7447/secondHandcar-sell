@@ -1,58 +1,41 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
-import logo2 from '../../../Utilities/Picture/image.png'
+import { Link } from 'react-router-dom';
+
+
+import logo2 from '../../Pages/Picture/carlogo.png'
 
 const Header = () => {
-    const {user, userLogOut} = useContext(AuthContext)
+    
 
-    const handleLogout=()=>{
-        userLogOut()
-        .then()
-        .catch()
-    }
+    
     const menuItems = 
     <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/service'>Service</Link></li>
+        
         <li><Link to='/blogs'>Blogs</Link></li>
         <li><Link to='/login'>Login</Link></li>
         <li>
-            <button onClick={handleLogout}>Log Out</button>
+            <button >Log Out</button>
         </li>
     
-    {/* creating optional chaing in order to show extra route if user logged in */}
-        {/* {
-            user?.email?
-            <><li><Link to='/myreview'>My Review</Link></li>
-            <li><Link to='/addservice'>Add Service</Link></li>
-            <li>
-                <button onClick={handleLogout}>Log Out</button>
-            </li>
-            </>
-            :
-            <li><Link to='/login'>Login</Link></li>
-        } */}
-
     </>
     return (
-        <div className="navbar bg-neutral text-neutral-content">
+        <div className="navbar bg-blue-700 text-neutral-content">
             <div className="navbar-start">
                 <div className="dropdown">
                 <label tabIndex={0} className="btn btn-ghost lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                 </label>
-                <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow  bg-neutral text-neutral-content rounded-box w-52">
+                <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow  bg-neutral text-neutral-content font-bold rounded-box w-52">
                    {menuItems}
                 </ul>
                 </div>
                 <Link to='/' className="btn btn-ghost normal-case text-xl">
-                    <img className='w-12 pr-2' src={logo2} alt=""/>SecondHand Car Sale
+                    <img className='w-14 pr-2' src={logo2} alt=""/>SecondHand Car Sale
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal p-0">
+                <ul className="menu menu-horizontal p-0 font-bold">
                     {menuItems}
                 </ul>
             </div>
