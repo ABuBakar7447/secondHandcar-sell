@@ -58,7 +58,7 @@ const SignUp = () => {
                     </div>
                 </form>
                 <div className='mx-auto mb-5'>
-                    <button className='btn'>Sign In By Google</button>
+                    <button className='btn'>SignIn By Google</button>
                 </div>
 
                 
