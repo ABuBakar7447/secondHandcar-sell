@@ -12,7 +12,7 @@ const Categories = () => {
     return (
         <div>
             <div className='my-5'>
-            <h1 className='lg:text-4xl md:text-3xl sm:text-2xl font-bold text-green-700 text-center'>Choose The Brand</h1>
+            <h1 className='lg:text-4xl md:text-3xl sm:text-2xl font-bold text-red-700 text-center underline'>Choose The Brand</h1>
             <h2 className='font-bold text-black-600 text-center'>Hope you will find the best car for you.</h2>
 
             
