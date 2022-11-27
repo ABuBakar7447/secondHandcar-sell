@@ -1,14 +1,38 @@
-import React, { useState } from 'react';
+import { GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const SignUp = () => {
-    const [value, setValue]=useState()
+    const [value, setValue]=useState('User')
+    const {createUser, providerGoogleLogin} = useContext(AuthContext)
+    const googleProvider = new GoogleAuthProvider();
+    
 
     const handleSignUp= event => {
         event.preventDefault();
         const form = event.target;
-        const name = form.companysize.value;
+        const email = form.email.value;
+        const password = form.password.value;
         console.log(value)
+        createUser(email, password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+            form.reset('');
+            
+        })
+        .catch(error =>console.error(error));
+
+    }
+
+    const handleGoogleSignIn = () =>{
+        providerGoogleLogin(googleProvider)
+        .then(result =>{
+            const user = result.user;
+            console.log(user)
+        })
+        .catch(error => console.error(error))
     }
     return (
         <div className="hero">
@@ -43,7 +67,7 @@ const SignUp = () => {
                     
                     <label className="block text-sm font-medium text-blue-700">How do you want to signin as?choose below</label>
                     <div className="mt-1">
-                        <select className='font-bold p-2 rounded border-2 border-indigo-600' value={value} onChange={e=>setValue(e.target.value)} name="companysize" id="company-size">
+                        <select className='font-bold p-2 rounded border-2 border-indigo-600' value={value} onChange={e=>setValue(e.target.value)} name="companysize" id="company-size" required>
                         <option >User</option>
                         <option>Seller</option>
                         </select>
@@ -58,7 +82,7 @@ const SignUp = () => {
                     </div>
                 </form>
                 <div className='mx-auto mb-5'>
-                    <button className='btn'>SignIn By Google</button>
+                    <button onClick={handleGoogleSignIn} className='btn'>SignIn By Google</button>
                 </div>
 
                 

@@ -1,12 +1,24 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 
+
 const LogIn = () => {
+
+   
+    
+   
+
+    
+
+    const handleLogin= event=>{
+        event.preventDefault();
+        
+    }
     return (
         <div className="hero">
         <div className="hero-content w-3/5 flex-col lg:flex-row">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-5">
-            <form className="card-body">
+            <form onSubmit={handleLogin} className="card-body">
                 <h1 className="text-4xl text-center font-bold">Login now</h1>
                 <div className="form-control">
                 <label className="label">
