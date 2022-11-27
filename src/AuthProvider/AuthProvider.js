@@ -17,16 +17,16 @@ const AuthProvider = ({children}) => {
    }
 
    
-   
-
-   
    const providerGoogleLogin = (provider) =>{
     setLoading(true);
     return signInWithPopup(auth, provider);
     }
 
-   
-   
+    const logInUser = (email, password) =>{
+        setLoading(true);
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+
 
    
    useEffect(()=>{
@@ -41,7 +41,7 @@ const AuthProvider = ({children}) => {
     }
    } ,[])
 
-    const authInfo = {user, loading, createUser, providerGoogleLogin}
+    const authInfo = {user, loading, createUser, logInUser, providerGoogleLogin}
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
