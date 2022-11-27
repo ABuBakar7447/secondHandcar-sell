@@ -4,21 +4,21 @@
      "category_name":"Toyota",
      "img_url":"https://bucket.dealervenom.com/assets/oem/toyota/Avalon-Toyota-Logo.png",
      "total_sell":"200",
-     "category_no":"01"
+     "category_id":"01"
     },
     
     {
      "category_name":"Honda",
      "img_url":"https://bucket.dealervenom.com/assets/oem/honda/honda-cars.png",
      "total_sell":"150",
-     "category_no":"02"
+     "category_id":"02"
     },
     
     {
      "category_name":"Nissan",
      "img_url":"https://static.dezeen.com/uploads/2020/07/nissan-flat-logo_dezeen_2364_col_0-852x568.jpg",
      "total_sell":"180",
-     "category_no":"03"
+     "category_id":"03"
     }
     
 ]

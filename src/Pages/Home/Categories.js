@@ -1,14 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import CategoryCard from './CategoryCard';
 
 const Categories = () => {
-    const [category, setCategory] = useState([]);
-    console.log(category)
-    useEffect(() => {
-        fetch('carcategory.json')
-            .then(res => res.json())
-            .then(data => setCategory(data))
-    }, [])
+    
+    
+
+    const {data : category = []} = useQuery({
+        queryKey: ['catagory'],
+        queryFn: async() => {
+            const res = await fetch('http://localhost:5000/catagory');
+            const data = await res.json();
+            return data;
+        }
+    })
+
+
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/catagory')
+    //         .then(res => res.json())
+    //         .then(data => setCategory(data))
+    // }, [])
+
+
     return (
         <div>
             <div className='my-5'>
