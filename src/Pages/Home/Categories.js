@@ -34,7 +34,7 @@ const Categories = () => {
                 <div className='w-11/12 grid gap-6 gird-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto my-5 '>
                     {
                         category.map(singleBrand =><CategoryCard
-                        key={singleBrand.category_no}
+                        key={singleBrand._id}
                         singleBrand={singleBrand}
                         ></CategoryCard>)
                     }

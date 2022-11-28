@@ -4,14 +4,16 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const SignUp = () => {
-    const [value, setValue]=useState('User')
-    const {createUser, providerGoogleLogin} = useContext(AuthContext)
+    const [value, setValue]=useState('Buyer')
+    const {createUser, editUser, providerGoogleLogin} = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider();
+    const [userEmail, setUserEmail] = useState('')
     
 
     const handleSignUp= event => {
         event.preventDefault();
         const form = event.target;
+        const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
         console.log(value)
@@ -19,6 +21,14 @@ const SignUp = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            const username = {
+                displayName: name
+            }
+            editUser(username)
+                    .then(() => {
+                        saveUserDetails(name, email, value);
+                    })
+                    .catch(err => console.log(err));
             form.reset('');
             
         })
@@ -26,14 +36,40 @@ const SignUp = () => {
 
     }
 
+
+    
     const handleGoogleSignIn = () =>{
         providerGoogleLogin(googleProvider)
         .then(result =>{
             const user = result.user;
-            console.log(user)
+            saveUserDetails(user.displayName, user.email, value)
         })
         .catch(error => console.error(error))
     }
+
+    const saveUserDetails = (name, email, value) =>{
+        console.log(name,email,value)
+        
+        const userInformation = {
+            user_name:name,
+            email:email,
+            role:value,
+            verification: 'not verified'
+        }
+
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(userInformation)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            setUserEmail(email);
+        })
+    }
+
     return (
         <div className="hero">
             <div className="hero-content w-3/5 flex-col lg:flex-row">
@@ -68,7 +104,7 @@ const SignUp = () => {
                     <label className="block text-sm font-medium text-blue-700">How do you want to signin as?choose below</label>
                     <div className="mt-1">
                         <select className='font-bold p-2 rounded border-2 border-indigo-600' value={value} onChange={e=>setValue(e.target.value)} name="companysize" id="company-size" required>
-                        <option >User</option>
+                        <option >Buyer</option>
                         <option>Seller</option>
                         </select>
                     </div>
