@@ -9,7 +9,13 @@ const SignUp = () => {
     const {createUser, editUser, providerGoogleLogin} = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider();
     const [userEmail, setUserEmail] = useState('')
-    
+    const[token]=useToken(userEmail)
+    const navigate = useNavigate();
+    console.log(userEmail)
+
+    if(token){
+        navigate('/')
+    }
     
 
     const handleSignUp= event => {

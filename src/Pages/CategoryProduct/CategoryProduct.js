@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ProductCard from './ProductCard';
 
 const CategoryProduct = () => {
-    const productdetails = useLoaderData()
+    const productdetails = useLoaderData();
+    const [productDetails, setProductDetails] = useState()
     console.log(productdetails)
     return (
         <div>
@@ -12,9 +13,10 @@ const CategoryProduct = () => {
                         productdetails.map(viewProduct =><ProductCard
                         key={viewProduct._id}
                         viewProduct={viewProduct}
+                        setProductDetails={setProductDetails}
                         ></ProductCard> )
                     }
-                </div>
+            </div>
         </div>
     );
 };
