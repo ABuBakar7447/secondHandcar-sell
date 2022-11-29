@@ -1,13 +1,15 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import useToken from '../../Hooks/useToken';
 
 const SignUp = () => {
     const [value, setValue]=useState('Buyer')
     const {createUser, editUser, providerGoogleLogin} = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider();
     const [userEmail, setUserEmail] = useState('')
+    
     
 
     const handleSignUp= event => {
@@ -48,7 +50,7 @@ const SignUp = () => {
     }
 
     const saveUserDetails = (name, email, value) =>{
-        console.log(name,email,value)
+        
         
         const userInformation = {
             user_name:name,

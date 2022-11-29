@@ -1,0 +1,108 @@
+[
+    {
+    "img_url":"https://upload.wikimedia.org/wikipedia/commons/4/41/TOYOTA_AVALON_China_%28cropped%29.jpg",
+    "product_category":"Toyota",
+    "product_name":"Toyota Avalon",
+    "location":"Dhaka",
+    "resale_price":"50,000",
+    "original_price":"100000",
+    "yearof_use":"2 year",
+    "purchase_year":"2020",
+    "post_date":"20/05/2022",
+    "condition":"Good",
+    "seller_name":"abc",
+    "seller_email":"abc@gmail.com",
+    "seller_number":"01889911221",
+    "description":"Car is in very good condition.It don't waste oil."
+    },
+    
+    
+    {
+    "img_url":"https://cdni.autocarindia.com/ExtraImages/20210406124218_Toyota_Camry_LT_1.jpg",
+    "product_category":"Toyota",
+    "product_name":"Toyota Camry",
+    "location":"Dhaka",
+    "resale_price":"50,500",
+    "original_price":"120000",
+    "yearof_use":"1.5 year",
+    "purchase_year":"2021",
+    "post_date":"21/05/2022",
+    "condition":"Good",
+    "seller_name":"abcd",
+    "seller_email":"abcd@gmail.com",
+    "seller_number":"01889911211",
+    "description":"Car is in very good condition.It takes 30sec to reach to take speed 80mph."
+    },
+    
+    
+    {
+    "img_url":"https://upload.wikimedia.org/wikipedia/commons/d/db/2019_Nissan_Altima_SL_2.5L_front_3.22.19.jpg",
+    "product_category":"Nissan",
+    "product_name":"Nissan Altima",
+    "location":"Chattogram",
+    "resale_price":"50,100",
+    "original_price":"200000",
+    "yearof_use":"2 year",
+    "purchase_year":"2020",
+    "post_date":"20/05/2022",
+    "condition":"Fair",
+    "seller_name":"trex",
+    "seller_email":"trex@gmail.com",
+    "seller_number":"01889911222",
+    "description":"Car is in very good condition.It don't waste oil."
+    },
+    
+    
+    {
+    "img_url":"https://www.auto-data.net/images/f115/Nissan-Tiida-Hatchback.jpg",
+    "product_category":"Nissan",
+    "product_name":"Nissan Tilda",
+    "location":"Chattogram",
+    "resale_price":"50,200",
+    "original_price":"300000",
+    "yearof_use":"1.8 year",
+    "purchase_year":"2020",
+    "post_date":"20/06/2022",
+    "condition":"Good",
+    "seller_name":"Drex",
+    "seller_email":"drex@gmail.com",
+    "seller_number":"01889911226",
+    "description":"Car is in very good condition.It don't waste oil.It takes 30sec to reach to take speed 80mph."
+    },
+    
+    
+    {
+    "img_url":"https://d1hv7ee95zft1i.cloudfront.net/custom/blog-post/mobile/featured/2021-honda-city-s-62023a90d2c62.jpg",
+    "product_category":"Honda",
+    "product_name":"Honda City",
+    "location":"Chattogram",
+    "resale_price":"50,300",
+    "original_price":"205000",
+    "yearof_use":"2.8 year",
+    "purchase_year":"2019",
+    "post_date":"20/06/2022",
+    "condition":"Good",
+    "seller_name":"Alex",
+    "seller_email":"alex@gmail.com",
+    "seller_number":"01889911299",
+    "description":"It don't waste oil.It takes 30sec to reach to take speed 80mph."
+    },
+    
+    
+    {
+    "img_url":"https://www.topgear.com/sites/default/files/cars-car/image/2020/06/303332_2020_honda_jazz.jpg",
+    "product_category":"Honda",
+    "product_name":"Honda Jazz",
+    "location":"Chattogram",
+    "resale_price":"50,000",
+    "original_price":"300000",
+    "yearof_use":"1 year",
+    "purchase_year":"2021",
+    "post_date":"20/06/2022",
+    "condition":"Good",
+    "seller_name":"Mouka",
+    "seller_email":"mouka@gmail.com",
+    "seller_number":"01889911277",
+    "description":"Car is in very good condition.It takes 30sec to reach to take speed 80mph."
+    }
+    ]
