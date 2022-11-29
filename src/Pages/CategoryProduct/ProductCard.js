@@ -1,7 +1,7 @@
 import React from 'react';
 
-const ProductCard = ({viewProduct}) => {
-    const {img_url, product_name, location, resale_price, original_price, yearof_use, purchase_year, post_date, condition, seller_name} = viewProduct
+const ProductCard = ({viewProduct, setModalData}) => {
+    const {img_url, product_name, location, resale_price, original_price, yearof_use, purchase_year, post_date, condition, seller_name,product_status} = viewProduct
     return (
         <div>
             <div className="card card-compact  bg-base-100 shadow-xl mx-auto w-3/4 my-10">
@@ -16,8 +16,9 @@ const ProductCard = ({viewProduct}) => {
                     <h3 className='font-bold'>Post Date: {post_date}</h3>
                     <h3 className='font-bold'>Condition: {condition}</h3>
                     <h3 className='font-bold'>Seller Name: {seller_name}</h3>
+                    <h3 className='font-bold'>Product Status: {product_status}</h3>
 
-                    <button>Book Now</button>
+                    <label htmlFor="my-modal-3" className="btn"  onClick={() => setModalData(viewProduct)}  >Book Now</label>
                     
                     
                 </div>

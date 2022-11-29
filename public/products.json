@@ -13,7 +13,8 @@
     "seller_name":"abc",
     "seller_email":"abc@gmail.com",
     "seller_number":"01889911221",
-    "description":"Car is in very good condition.It don't waste oil."
+    "description":"Car is in very good condition.It don't waste oil.",
+    "product_status":"Available."
     },
     
     
@@ -31,7 +32,8 @@
     "seller_name":"abcd",
     "seller_email":"abcd@gmail.com",
     "seller_number":"01889911211",
-    "description":"Car is in very good condition.It takes 30sec to reach to take speed 80mph."
+    "description":"Car is in very good condition.It takes 30sec to reach to take speed 80mph.",
+    "product_status":"Available."
     },
     
     
@@ -49,7 +51,8 @@
     "seller_name":"trex",
     "seller_email":"trex@gmail.com",
     "seller_number":"01889911222",
-    "description":"Car is in very good condition.It don't waste oil."
+    "description":"Car is in very good condition.It don't waste oil.",
+    "product_status":"Available."
     },
     
     
@@ -67,7 +70,8 @@
     "seller_name":"Drex",
     "seller_email":"drex@gmail.com",
     "seller_number":"01889911226",
-    "description":"Car is in very good condition.It don't waste oil.It takes 30sec to reach to take speed 80mph."
+    "description":"Car is in very good condition.It don't waste oil.It takes 30sec to reach to take speed 80mph.",
+    "product_status":"Available."
     },
     
     
@@ -85,7 +89,8 @@
     "seller_name":"Alex",
     "seller_email":"alex@gmail.com",
     "seller_number":"01889911299",
-    "description":"It don't waste oil.It takes 30sec to reach to take speed 80mph."
+    "description":"It don't waste oil.It takes 30sec to reach to take speed 80mph.",
+    "product_status":"Available."
     },
     
     
@@ -103,6 +108,7 @@
     "seller_name":"Mouka",
     "seller_email":"mouka@gmail.com",
     "seller_number":"01889911277",
-    "description":"Car is in very good condition.It takes 30sec to reach to take speed 80mph."
+    "description":"Car is in very good condition.It takes 30sec to reach to take speed 80mph.",
+    "product_status":"Available."
     }
     ]
