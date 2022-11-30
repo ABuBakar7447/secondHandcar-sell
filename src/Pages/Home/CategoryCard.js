@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CategoryCard = ({singleBrand}) => {
-    const {category_name,img_url,total_sell,category_id}=singleBrand
+    const {category_name,img_url,total_sell}=singleBrand
     return (
         <div>
             <div className="card lg:h-72 bg-base-100 shadow-xl image-full">

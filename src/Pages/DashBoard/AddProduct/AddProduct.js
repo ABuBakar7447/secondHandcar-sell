@@ -89,7 +89,7 @@ const AddProduct = () => {
                 <input type="file" {...register("image", {
                     required: "Photo is Required"
                 })} className="input input-bordered w-full" />
-                {errors.img && <p className='text-red-500'>{errors.img.message}</p>}
+                {errors.img && <p className='text-red-600'>{errors.img.message}</p>}
             </div>
 
 
@@ -98,7 +98,7 @@ const AddProduct = () => {
                 <input type="text" {...register("pro_name", {
                     required: "Product Name is Required"
                 })} className="input input-bordered w-full" />
-                {errors.pro_name && <p className='text-red-500'>{errors.pro_name.message}</p>}
+                {errors.pro_name && <p className='text-red-600'>{errors.pro_name.message}</p>}
             </div>
 
 
@@ -107,7 +107,7 @@ const AddProduct = () => {
                 <input type="text" {...register("location", {
                     required: "Product Location is Required"
                 })} className="input input-bordered w-full" />
-                {errors.pro_loc && <p className='text-red-500'>{errors.pro_loc.message}</p>}
+                {errors.pro_loc && <p className='text-red-600'>{errors.pro_loc.message}</p>}
             </div>
 
 
@@ -116,7 +116,7 @@ const AddProduct = () => {
                 <input type="text" {...register("resale", {
                     required: "Resale price is Required"
                 })} className="input input-bordered w-full" />
-                {errors.re_sale && <p className='text-red-500'>{errors.re_sale.message}</p>}
+                {errors.re_sale && <p className='text-red-600'>{errors.re_sale.message}</p>}
             </div>
 
 
@@ -125,7 +125,7 @@ const AddProduct = () => {
                 <input type="text" {...register("original", {
                     required: "Original price is Required"
                 })} className="input input-bordered w-full" />
-                {errors.original && <p className='text-red-500'>{errors.original.message}</p>}
+                {errors.original && <p className='text-red-600'>{errors.original.message}</p>}
             </div>
 
 
@@ -134,7 +134,7 @@ const AddProduct = () => {
                 <input type="text" {...register("usetime", {
                     required: "Uses time is Required"
                 })} className="input input-bordered w-full" />
-                {errors.use && <p className='text-red-500'>{errors.use.message}</p>}
+                {errors.use && <p className='text-red-600'>{errors.use.message}</p>}
             </div>
 
             <div className="form-control w-full">
@@ -142,7 +142,7 @@ const AddProduct = () => {
                 <input type="text" {...register("buytime", {
                     required: "Purchase date is Required"
                 })} className="input input-bordered w-full" />
-                {errors.date && <p className='text-red-500'>{errors.date.message}</p>}
+                {errors.date && <p className='text-red-600'>{errors.date.message}</p>}
             </div>
 
 
@@ -151,7 +151,7 @@ const AddProduct = () => {
                 <input type="text" {...register("postingdate", {
                     required: "Posting time is Required"
                 })} className="input input-bordered w-full" />
-                {errors.post && <p className='text-red-500'>{errors.post.message}</p>}
+                {errors.post && <p className='text-red-600'>{errors.post.message}</p>}
             </div>
 
 
@@ -176,7 +176,7 @@ const AddProduct = () => {
                 <input type="text" {...register("number", {
                     required: "Number is Required"
                 })} className="input input-bordered w-full" />
-                {errors.num && <p className='text-red-500'>{errors.num.message}</p>}
+                {errors.num && <p className='text-red-600'>{errors.num.message}</p>}
             </div>
 
 
@@ -198,7 +198,7 @@ const AddProduct = () => {
                 <input type="text" {...register("description", {
                     required: "Description is Required"
                 })} className="input input-bordered w-full p-10" />
-                {errors.des && <p className='text-red-500'>{errors.des.message}</p>}
+                {errors.des && <p className='text-red-600'>{errors.des.message}</p>}
             </div>
 
             <input className='btn btn-primary w-full mt-4' value="Add Product" type="submit" />
