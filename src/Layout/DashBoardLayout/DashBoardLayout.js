@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import Header from '../../Shared/Header/Header';
 
 const DashBoardLayout = () => {
@@ -21,8 +21,8 @@ const DashBoardLayout = () => {
                 <div className="flex-none hidden lg:block">
                     <ul className="menu menu-horizontal">
                     {/* <!-- Navbar menu content here --> */}
-                    <li><a>Navbar Item 1</a></li>
-                    <li><a>Navbar Item 2</a></li>
+                    <li><Link to='/dashboard/addproduct'>Add Product</Link></li>
+                    <li><Link to='/dashboard/myproduct'>MyProduct</Link></li>
                     </ul>
                 </div>
                 </div>
@@ -33,8 +33,8 @@ const DashBoardLayout = () => {
                 <label htmlFor="my-drawer-3" className="drawer-overlay"></label> 
                 <ul className="menu p-4 w-80 bg-base-100">
                 {/* <!-- Sidebar content here --> */}
-                <li className=''><a>Sidebar Item 1</a></li>
-                <li><a>Sidebar Item 2</a></li>
+                <li className=''><Link to=' '>Sidebar Item 1</Link></li>
+                <li><Link to=' '>Sidebar Item 2</Link></li>
                 
                 </ul>
                 
