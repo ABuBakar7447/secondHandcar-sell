@@ -23,6 +23,8 @@ const DashBoardLayout = () => {
                     {/* <!-- Navbar menu content here --> */}
                     <li><Link to='/dashboard/addproduct'>Add Product</Link></li>
                     <li><Link to='/dashboard/myproduct'>MyProduct</Link></li>
+                    <li><Link to='/dashboard/allseller'>AllSeller</Link></li>
+                    <li><Link to='/dashboard/allbuyer'>AllBuyer</Link></li>
                     </ul>
                 </div>
                 </div>
@@ -33,8 +35,11 @@ const DashBoardLayout = () => {
                 <label htmlFor="my-drawer-3" className="drawer-overlay"></label> 
                 <ul className="menu p-4 w-80 bg-base-100">
                 {/* <!-- Sidebar content here --> */}
-                <li className=''><Link to=' '>Sidebar Item 1</Link></li>
-                <li><Link to=' '>Sidebar Item 2</Link></li>
+                
+                <li className=''><Link to='/dashboard/addproduct'>Add Product</Link></li>
+                    <li><Link to='/dashboard/myproduct'>MyProduct</Link></li>
+                    <li><Link to='/dashboard/allseller'>AllSeller</Link></li>
+                    <li><Link to='/dashboard/allbuyer'>AllBuyer</Link></li>
                 
                 </ul>
                 

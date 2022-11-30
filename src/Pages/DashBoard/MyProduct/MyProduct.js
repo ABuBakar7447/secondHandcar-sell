@@ -28,7 +28,7 @@ const MyProduct = () => {
     // })
 
 
-    const haldleDelete = id => {
+    const handleDelete = id => {
         const proceed = window.confirm('Do you want to remove your product?');
         if (proceed) {
             fetch(`http://localhost:5000/delproduct/${id}`, {
@@ -55,7 +55,7 @@ const MyProduct = () => {
                     {
                         productDetails.map(sellerProduct =><MyProductCard key={sellerProduct._id}
                             sellerProduct={sellerProduct}
-                            haldleDelete={haldleDelete}
+                            handleDelete={handleDelete}
                             ></MyProductCard>
                         )
                     }
