@@ -2,11 +2,13 @@ import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import useAdmin from '../../Hooks/useAdmin';
+import useSeller from '../../Hooks/useSeller';
 import Header from '../../Shared/Header/Header';
 
 const DashBoardLayout = () => {
     const {user} = useContext(AuthContext)
     const [isAdmin] = useAdmin(user?.email)
+    const [isSeller] = useSeller(user?.email)
     return (
         <div>
             
@@ -25,9 +27,8 @@ const DashBoardLayout = () => {
                 <div className="flex-none hidden lg:block">
                     <ul className="menu menu-horizontal">
                     {/* <!-- Navbar menu content here --> */}
-                    <li><Link to='/dashboard/addproduct'>Add Product</Link></li>
-                    <li><Link to='/dashboard/myproduct'>MyProduct</Link></li>
-                    
+
+
                     {
                         isAdmin &&
                         <>
@@ -35,6 +36,18 @@ const DashBoardLayout = () => {
                         <li><Link to='/dashboard/allbuyer'>AllBuyer</Link></li>
                         </>
                     }
+
+
+                    {
+                        isSeller &&
+                        <>
+                        <li><Link to='/dashboard/addproduct'>Add Product</Link></li>
+                        <li><Link to='/dashboard/myproduct'>MyProduct</Link></li>
+                        </>
+                        
+                    }
+                    
+                    
                     </ul>
                 </div>
                 </div>
@@ -45,15 +58,24 @@ const DashBoardLayout = () => {
                 <label htmlFor="my-drawer-3" className="drawer-overlay"></label> 
                 <ul className="menu p-4 w-80 bg-base-100">
                 {/* <!-- Sidebar content here --> */}
-                
-                <li className=''><Link to='/dashboard/addproduct'>Add Product</Link></li>
-                    <li><Link to='/dashboard/myproduct'>MyProduct</Link></li>
+                    
+
                     {
                         isAdmin &&
                         <>
                         <li><Link to='/dashboard/allseller'>AllSeller</Link></li>
                         <li><Link to='/dashboard/allbuyer'>AllBuyer</Link></li>
                         </>
+                    }
+
+
+                    {
+                        isSeller &&
+                        <>
+                        <li><Link to='/dashboard/addproduct'>Add Product</Link></li>
+                        <li><Link to='/dashboard/myproduct'>MyProduct</Link></li>
+                        </>
+                        
                     }
 
                 </ul>

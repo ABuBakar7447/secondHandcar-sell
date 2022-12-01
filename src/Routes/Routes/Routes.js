@@ -13,6 +13,7 @@ import LogIn from "../../Pages/LogIn/LogIn";
 import SignUp from "../../Pages/SignUp/SignUp";
 import AdminPrivate from "../AdminPrivate/AdminPrivate";
 import Private from "../Private/Private";
+import SellerPrivate from "../SellerPrivate/SellerPrivate";
 
 const router = createBrowserRouter([
     {
@@ -54,11 +55,11 @@ const router = createBrowserRouter([
             },
             {
                 path:'/dashboard/addproduct',
-                element:<AddProduct></AddProduct>,
+                element:<SellerPrivate><AddProduct></AddProduct></SellerPrivate>,
             },
             {
                 path:'/dashboard/myproduct',
-                element: <MyProduct></MyProduct>,
+                element: <SellerPrivate><MyProduct></MyProduct></SellerPrivate>,
             },
             {
                 path:'/dashboard/allseller',
