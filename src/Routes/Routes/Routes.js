@@ -11,6 +11,8 @@ import MyProduct from "../../Pages/DashBoard/MyProduct/MyProduct";
 import Home from "../../Pages/Home/Home";
 import LogIn from "../../Pages/LogIn/LogIn";
 import SignUp from "../../Pages/SignUp/SignUp";
+import AdminPrivate from "../AdminPrivate/AdminPrivate";
+import Private from "../Private/Private";
 
 const router = createBrowserRouter([
     {
@@ -36,7 +38,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/products/:category_name',
-                element:<CategoryProduct></CategoryProduct>,
+                element:<Private><CategoryProduct></CategoryProduct></Private>,
                 loader: ({params}) => fetch(`http://localhost:5000/products?product_category=${params.category_name}`)
             },
 
@@ -60,11 +62,11 @@ const router = createBrowserRouter([
             },
             {
                 path:'/dashboard/allseller',
-                element:<AllSeller></AllSeller>,
+                element:<AdminPrivate><AllSeller></AllSeller></AdminPrivate>,
             },
             {
                 path:'/dashboard/allbuyer',
-                element:<AllBuyer></AllBuyer>,
+                element:<AdminPrivate><AllBuyer></AllBuyer></AdminPrivate>,
             },
         ]
         

@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import MyProductCard from './MyProductCard';
@@ -11,14 +11,22 @@ const MyProduct = () => {
     console.log(productDetails)
 
     //collecting data base on user email
+    
     useEffect(() => {
-        fetch(`http://localhost:5000/product?seller_email=${user?.email}`)
+        fetch(`http://localhost:5000/product?seller_email=${user?.email}`,{
+            
+            headers: {
+                    authorization: `bearer ${localStorage.getItem('tokenForAccess')}`
+                    
+                }
+            }
+        )
             .then(res => res.json())
             .then(data => setProductDetails(data))
     }, [user?.email])
 
 
-    // const {data : product= []} = useQuery({
+    // const {data : productDetails= []} = useQuery({
     //     queryKey: ['product'],
     //     queryFn: async() => {
     //         const res = await fetch(`http://localhost:5000/product?seller_email=${user?.email}`);
@@ -53,7 +61,7 @@ const MyProduct = () => {
         <div>
             <div className='w-11/12 grid gap-6 gird-cols-1 md:grid-cols-2 lg:grid-cols-2 mx-auto my-5 '>
                     {
-                        productDetails.map(sellerProduct =><MyProductCard key={sellerProduct._id}
+                        productDetails?.length && productDetails.map(sellerProduct =><MyProductCard key={sellerProduct._id}
                             sellerProduct={sellerProduct}
                             handleDelete={handleDelete}
                             ></MyProductCard>

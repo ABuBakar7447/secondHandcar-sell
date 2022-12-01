@@ -1,16 +1,25 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
 
 
 const AllSeller = () => {
 
-    const [userDetails, setUserDetails] = useState([])
-    console.log(userDetails)
+    // const [userDetails, setUserDetails] = useState([])
+    // console.log(userDetails)
 
-    useEffect(()=>{
-        fetch('http://localhost:5000/seller')
-        .then(res => res.json())
-        .then(data => setUserDetails(data))
-    },[])
+    const {data: userDetails = [], refetch} = useQuery({
+        queryKey: ['seller'],
+        queryFn: async() =>{
+            const res = await fetch('http://localhost:5000/seller');
+            const data = await res.json();
+            return data;
+        }
+    });
+    // useEffect(()=>{
+    //     fetch('http://localhost:5000/seller')
+    //     .then(res => res.json())
+    //     .then(data => setUserDetails(data))
+    // },[])
 
     const handleUserDelete = id => {
         const proceed = window.confirm('Do you want to remove this user?');
@@ -24,8 +33,9 @@ const AllSeller = () => {
                     console.log(data);
                     if (data.deletedCount > 0) {
                         alert('The user has been deleted successfully')
-                        const leftUser = userDetails.filter(del => del._id !== id);
-                        setUserDetails(leftUser)
+                        // const leftUser = userDetails.filter(del => del._id !== id);
+                        // setUserDetails(leftUser)
+                        refetch()
                     }
                 })
         }

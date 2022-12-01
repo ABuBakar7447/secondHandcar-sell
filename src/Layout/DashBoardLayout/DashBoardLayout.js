@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import useAdmin from '../../Hooks/useAdmin';
 import Header from '../../Shared/Header/Header';
 
 const DashBoardLayout = () => {
+    const {user} = useContext(AuthContext)
+    const [isAdmin] = useAdmin(user?.email)
     return (
         <div>
             
@@ -23,8 +27,14 @@ const DashBoardLayout = () => {
                     {/* <!-- Navbar menu content here --> */}
                     <li><Link to='/dashboard/addproduct'>Add Product</Link></li>
                     <li><Link to='/dashboard/myproduct'>MyProduct</Link></li>
-                    <li><Link to='/dashboard/allseller'>AllSeller</Link></li>
-                    <li><Link to='/dashboard/allbuyer'>AllBuyer</Link></li>
+                    
+                    {
+                        isAdmin &&
+                        <>
+                        <li><Link to='/dashboard/allseller'>AllSeller</Link></li>
+                        <li><Link to='/dashboard/allbuyer'>AllBuyer</Link></li>
+                        </>
+                    }
                     </ul>
                 </div>
                 </div>
@@ -38,9 +48,14 @@ const DashBoardLayout = () => {
                 
                 <li className=''><Link to='/dashboard/addproduct'>Add Product</Link></li>
                     <li><Link to='/dashboard/myproduct'>MyProduct</Link></li>
-                    <li><Link to='/dashboard/allseller'>AllSeller</Link></li>
-                    <li><Link to='/dashboard/allbuyer'>AllBuyer</Link></li>
-                
+                    {
+                        isAdmin &&
+                        <>
+                        <li><Link to='/dashboard/allseller'>AllSeller</Link></li>
+                        <li><Link to='/dashboard/allbuyer'>AllBuyer</Link></li>
+                        </>
+                    }
+
                 </ul>
                 
             </div>
