@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+## What I have done?
+Using reactjs library I have created this website named `SecondHandCar Sale.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How I have completed this project?
+First I have installed react and then created route of my project. Then I have collected api data from mongodb server and load it in my website and using those data and doing some coding I have built this website and every time I have pussed data into my github so that my data get stored in a safe place. 
 
-## Available Scripts
+## Details or feature of my website
+ In my website there is 8 page (Home, Blogs, Dashboard(Addproduct, MyProduct, Allseller, Allbuyer, Myorder) Logout, Login, Signup). First page is default webpage or you can go that page by selecting Home or icon button in the header section. In my homepage I have 3 types of brand car and click on them you will redirect to product page of that brand and there you can product details and can book the product . Besides you can go to blog page by selecting blogs button. There you can see some question related answer. There is login and register option.There is Dashborad option but inorder to see that option you have to login. If you log in as seller you will myproduct route and add product route in dashboard.otherwise if you logged in as buyer you can see myorder option. There is a route for admin. This route will show allseller and allbuyer.
 
-In the project directory, you can run:
+## Feature 
+ * 8 button in navbar to go different page (Home, Blogs, Dashboard(Addproduct, MyProduct, Allseller,
+ Allbuyer, Myorder) Logout, Login, Signup)
+ * Blogs section will give you knowledge 
+ * You can see Category product if you are logged in.
+ * You can see Dashboard if you are logged in.
+ * You can book product from category product route.
+ * You can see myproduct and addproduct from dashboard if logged in seller.
+ * You can delete your product, add product, advertise your product if you logged in seller.
+ * You can see your booked product if you logged in buyer.
+ * You can see allbuyer and allseller route if are admin.
+ * You can delete seller and buyer.Also you can verify seller if you are a admin
 
-### `npm start`
+ ## Website Link
+[https://lawyer-service-d5b13.web.app/]
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Admin email and password
+ * email: abu15-3782@diu.edu.bd
+ * password:123456
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ “*”
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ * 

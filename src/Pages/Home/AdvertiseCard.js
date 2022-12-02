@@ -9,14 +9,11 @@ const AdvertiseCard = ({product}) => {
                 <div className="card-body">
                     <h2 className="card-title">Product Name: {product_name}</h2>
                     <h3 className='font-bold'>Product Location: {location}</h3>
-                    
-                    <h3 className='font-bold'>Year of Use: {yearof_use}</h3>
-                    <h3 className='font-bold'>Purchase Year: {purchase_year}</h3>
-                    <h3 className='font-bold'>Post Date: {post_date}</h3>
+ 
                     <h3 className='font-bold'>Condition: {condition}</h3>
                     
                     <h3 className='font-bold'>Product Status: {product_status}</h3>
-                    <h3 className='font-bold'>Resale Price: ${resale_price}</h3>
+                    <h3 className='font-bold'>Current Price: ${resale_price}</h3>
                     
                     <h3 className='font-bold'>Offer: <span className='text-yellow-400'>20% off</span></h3>
                     
