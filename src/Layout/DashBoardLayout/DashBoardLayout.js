@@ -42,6 +42,7 @@ const DashBoardLayout = () => {
                         <>
                         <li><Link to='/dashboard/allseller'>AllSeller</Link></li>
                         <li><Link to='/dashboard/allbuyer'>AllBuyer</Link></li>
+                        <li><Link to='/dashboard/report'>Report</Link></li>
                         </>
                     }
 
@@ -79,6 +80,7 @@ const DashBoardLayout = () => {
                         <>
                         <li><Link to='/dashboard/allseller'>AllSeller</Link></li>
                         <li><Link to='/dashboard/allbuyer'>AllBuyer</Link></li>
+                        <li><Link to='/dashboard/report'>Report</Link></li>
                         </>
                     }
 

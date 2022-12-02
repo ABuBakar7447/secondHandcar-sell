@@ -5,10 +5,10 @@ import MyOrderCard from './MyOrderCard';
 
 const MyBooking = () => {
 
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
     const [myorders, setMyOrder] = useState([])
-    
+
 
     // const {data: myorders = []} = useQuery({
     //     queryKey: ['myorder'],
@@ -19,25 +19,25 @@ const MyBooking = () => {
     //     }
     // });
 
-    useEffect(()=>{
-        fetch(`http://localhost:5000/myorder?email=${user?.email}`)
-        .then(res => res.json())
+    useEffect(() => {
+        fetch(`https://second-hand-product-server.vercel.app/myorder?email=${user?.email}`)
+            .then(res => res.json())
             .then(data => setMyOrder(data))
-    },[user?.email])
-    
+    }, [user?.email])
+
 
 
 
 
     return (
         <div>
-           <div className='w-11/12 grid gap-6 gird-cols-1 md:grid-cols-2 lg:grid-cols-2 mx-auto my-5 '>
-                    {
-                       myorders.length && myorders.map(viewOrder =><MyOrderCard
+            <div className='w-11/12 grid gap-6 gird-cols-1 md:grid-cols-2 lg:grid-cols-2 mx-auto my-5 '>
+                {
+                    myorders.length && myorders.map(viewOrder => <MyOrderCard
                         key={viewOrder._id}
                         viewOrder={viewOrder}
-                        ></MyOrderCard> )
-                    }
+                    ></MyOrderCard>)
+                }
             </div>
         </div>
     );

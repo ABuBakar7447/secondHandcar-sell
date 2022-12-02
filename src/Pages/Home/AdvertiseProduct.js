@@ -4,10 +4,10 @@ import AdvertiseCard from './AdvertiseCard';
 
 const AdvertiseProduct = () => {
 
-    const {data: advertised = []} = useQuery({
+    const { data: advertised = [] } = useQuery({
         queryKey: ['advertised'],
-        queryFn: async() =>{
-            const res = await fetch('http://localhost:5000/advertised');
+        queryFn: async () => {
+            const res = await fetch('https://second-hand-product-server.vercel.app/advertised');
             const data = await res.json();
             return data;
         }
@@ -22,17 +22,17 @@ const AdvertiseProduct = () => {
             }
 
             <div className='w-11/12 grid gap-6 gird-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto my-2 '>
-            
 
-            {
-            advertised.length && advertised.map(product =><AdvertiseCard
-            key={product._id}
-            product={product}
-            ></AdvertiseCard>)
-            } 
+
+                {
+                    advertised.length && advertised.map(product => <AdvertiseCard
+                        key={product._id}
+                        product={product}
+                    ></AdvertiseCard>)
+                }
 
             </div>
-           
+
         </div>
     );
 };

@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react"
 
-const useAdmin = email =>{
+const useAdmin = email => {
     const [isAdmin, setAdmin] = useState(false);
     const [adminLoading, setAdminLoading] = useState(true)
 
-    useEffect(()=>{
-        if(email){
-            fetch(`http://localhost:5000/admin/${email}`)
-            .then(res => res.json())
-            .then(data => {
-                setAdmin(data.isAdmin)
-                setAdminLoading(false)
-            })
+    useEffect(() => {
+        if (email) {
+            fetch(`https://second-hand-product-server.vercel.app/admin/${email}`)
+                .then(res => res.json())
+                .then(data => {
+                    setAdmin(data.isAdmin)
+                    setAdminLoading(false)
+                })
         }
 
-    },[email])
+    }, [email])
     return [isAdmin, adminLoading]
 }
 export default useAdmin;

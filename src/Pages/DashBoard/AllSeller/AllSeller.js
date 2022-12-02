@@ -11,13 +11,13 @@ const AllSeller = () => {
     const {data: userDetails = [], refetch} = useQuery({
         queryKey: ['seller'],
         queryFn: async() =>{
-            const res = await fetch('http://localhost:5000/seller');
+            const res = await fetch('https://second-hand-product-server.vercel.app/seller');
             const data = await res.json();
             return data;
         }
     });
     // useEffect(()=>{
-    //     fetch('http://localhost:5000/seller')
+    //     fetch('https://second-hand-product-server.vercel.app/seller')
     //     .then(res => res.json())
     //     .then(data => setUserDetails(data))
     // },[])
@@ -25,7 +25,7 @@ const AllSeller = () => {
     const handleUserDelete = id => {
         const proceed = window.confirm('Do you want to remove this user?');
         if (proceed) {
-            fetch(`http://localhost:5000/delseller/${id}`, {
+            fetch(`https://second-hand-product-server.vercel.app/delseller/${id}`, {
                 method: 'Delete'
             })
 
@@ -43,7 +43,7 @@ const AllSeller = () => {
     }
 
     const handleVerfied = id =>{
-        fetch(`http://localhost:5000/update/${id}`,{
+        fetch(`https://second-hand-product-server.vercel.app/update/${id}`,{
             method: 'PUT'
         })
         .then(res => res.json())

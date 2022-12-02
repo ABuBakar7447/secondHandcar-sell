@@ -9,6 +9,7 @@ import AllSeller from "../../Pages/DashBoard/AllSeller/AllSeller";
 import Dashboards from "../../Pages/DashBoard/DashBoards/Dashboards";
 import MyBooking from "../../Pages/DashBoard/MyBookIng/MyBooking";
 import MyProduct from "../../Pages/DashBoard/MyProduct/MyProduct";
+import Report from "../../Pages/DashBoard/Report/Report";
 import Home from "../../Pages/Home/Home";
 import LogIn from "../../Pages/LogIn/LogIn";
 import SignUp from "../../Pages/SignUp/SignUp";
@@ -23,65 +24,66 @@ const router = createBrowserRouter([
         path: '/',
         element: <Main></Main>,
         children: [
-            
+
             {
-                path:'/',
-                element:<Home></Home>
+                path: '/',
+                element: <Home></Home>
             },
             {
-                path:'/login',
-                element:<LogIn></LogIn>
+                path: '/login',
+                element: <LogIn></LogIn>
             },
             {
-                path:'/signin',
-                element:<SignUp></SignUp>
+                path: '/signin',
+                element: <SignUp></SignUp>
             },
             {
-                path:'/blogs',
-                element:<Blog></Blog>
+                path: '/blogs',
+                element: <Blog></Blog>
             },
             {
-                path:'/products/:category_name',
-                element:<Private><CategoryProduct></CategoryProduct></Private>,
-                loader: ({params}) => fetch(`http://localhost:5000/products?product_category=${params.category_name}`)
+                path: '/products/:category_name',
+                element: <Private><CategoryProduct></CategoryProduct></Private>,
+                loader: ({ params }) => fetch(`https://second-hand-product-server.vercel.app/products?product_category=${params.category_name}`)
             },
             {
-                path:'*',
-                element:<Undirected></Undirected>
+                path: '*',
+                element: <Undirected></Undirected>
             },
 
         ]
     },
     {
-        path:'/dashboard',
-        element:<DashBoardLayout></DashBoardLayout>,
-        children:[
+        path: '/dashboard',
+        element: <DashBoardLayout></DashBoardLayout>,
+        children: [
+
             {
-                path:'/dashboard',
-                element:<Dashboards></Dashboards>,
+                path: '/dashboard/addproduct',
+                element: <SellerPrivate><AddProduct></AddProduct></SellerPrivate>,
             },
             {
-                path:'/dashboard/addproduct',
-                element:<SellerPrivate><AddProduct></AddProduct></SellerPrivate>,
-            },
-            {
-                path:'/dashboard/myproduct',
+                path: '/dashboard/myproduct',
                 element: <SellerPrivate><MyProduct></MyProduct></SellerPrivate>,
             },
             {
-                path:'/dashboard/allseller',
-                element:<AdminPrivate><AllSeller></AllSeller></AdminPrivate>,
+                path: '/dashboard/allseller',
+                element: <AdminPrivate><AllSeller></AllSeller></AdminPrivate>,
             },
             {
-                path:'/dashboard/allbuyer',
-                element:<AdminPrivate><AllBuyer></AllBuyer></AdminPrivate>,
+                path: '/dashboard/allbuyer',
+                element: <AdminPrivate><AllBuyer></AllBuyer></AdminPrivate>,
             },
             {
-                path:'/dashboard/myorder',
-                element:<BuyerPrivate><MyBooking></MyBooking></BuyerPrivate>,
+                path: '/dashboard/report',
+                element: <AdminPrivate><Report></Report></AdminPrivate>,
+            },
+            {
+                path: '/dashboard/myorder',
+                element: <BuyerPrivate><MyBooking></MyBooking></BuyerPrivate>,
             },
         ]
-        
+
     }
 ]);
 
