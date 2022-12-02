@@ -14,7 +14,9 @@ const DashBoardLayout = () => {
     const [isBuyer] = useBuyer(user?.email)
     return (
         <div>
-            
+            {/* dashboard layout creating */}
+
+
             <div className="drawer">
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" /> 
             <div className="drawer-content flex flex-col">
@@ -29,7 +31,7 @@ const DashBoardLayout = () => {
                 
                 <div className="flex-none hidden lg:block">
                     <ul className="menu menu-horizontal">
-                    {/* <!-- Navbar menu content here --> */}
+                    {/* <!-- Navbar menu content --> */}
                     {
                         isBuyer && <>
                         <li><Link to='/dashboard/myorder'>Myorder</Link></li>

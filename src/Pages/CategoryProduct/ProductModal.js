@@ -8,6 +8,8 @@ const ProductModal = ({ modalData }) => {
     const { user } = useContext(AuthContext)
     const { img_url, product_name, resale_price } = modalData
 
+    //modaldata sending
+    
     const handleModal = event => {
 
         const form = event.target;

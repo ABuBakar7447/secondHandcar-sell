@@ -10,32 +10,33 @@ const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
 
-    
+    //sign up
    const createUser = (email,password) =>{
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password)
    }
 
-   
+   //google log in
    const providerGoogleLogin = (provider) =>{
     setLoading(true);
     return signInWithPopup(auth, provider);
     }
 
+    //log in
     const logInUser = (email, password) =>{
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
 
 
-    
+    //logout
     const userLogOut =()=>{
     
         return signOut(auth)
        }
 
 
-
+    //name
     const editUser =(username)=>{
         return updateProfile(auth.currentUser,username)
     }

@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 
 const useToken = email => {
     const [token, setToken] = useState(null);
+
+    //token sending
+    
     useEffect(() => {
         if (email) {
             fetch(`https://second-hand-product-server.vercel.app/jwt?email=${email}`)

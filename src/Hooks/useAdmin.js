@@ -4,6 +4,7 @@ const useAdmin = email => {
     const [isAdmin, setAdmin] = useState(false);
     const [adminLoading, setAdminLoading] = useState(true)
 
+    //admin route checking
     useEffect(() => {
         if (email) {
             fetch(`https://second-hand-product-server.vercel.app/admin/${email}`)

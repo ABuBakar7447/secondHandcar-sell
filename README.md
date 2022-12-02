@@ -21,9 +21,9 @@ First I have installed react and then created route of my project. Then I have c
  * You can delete seller and buyer.Also you can verify seller if you are a admin
 
  ## Website Link
-[https://lawyer-service-d5b13.web.app/]
+[https://second-hand-product-ac840.web.app/]
 
 ## Admin email and password
- * email: abu15-3782@diu.edu.bd
- * password:123456
+ * email:<abu15-3782@diu.edu.bd>
+ * password:<123456>
 

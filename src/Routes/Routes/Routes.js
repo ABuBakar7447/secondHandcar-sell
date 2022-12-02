@@ -6,7 +6,7 @@ import CategoryProduct from "../../Pages/CategoryProduct/CategoryProduct";
 import AddProduct from "../../Pages/DashBoard/AddProduct/AddProduct";
 import AllBuyer from "../../Pages/DashBoard/AllBuyer/AllBuyer";
 import AllSeller from "../../Pages/DashBoard/AllSeller/AllSeller";
-import Dashboards from "../../Pages/DashBoard/DashBoards/Dashboards";
+
 import MyBooking from "../../Pages/DashBoard/MyBookIng/MyBooking";
 import MyProduct from "../../Pages/DashBoard/MyProduct/MyProduct";
 import Report from "../../Pages/DashBoard/Report/Report";

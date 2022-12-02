@@ -8,6 +8,7 @@ const ProductCard = ({ viewProduct, setModalData }) => {
     console.log(seller_email)
 
 
+    //checking seller status
 
     const { data: userDetails = [] } = useQuery({
 
@@ -23,7 +24,7 @@ const ProductCard = ({ viewProduct, setModalData }) => {
 
 
 
-
+//card data showing
     return (
         <div>
             <div className="card card-compact  bg-base-100 shadow-xl mx-auto w-3/4 my-10">
@@ -40,6 +41,8 @@ const ProductCard = ({ viewProduct, setModalData }) => {
 
                     <h3 className='font-bold'>Product Status: {product_status}</h3>
                     <h3 className='font-bold'>Seller Name: {seller_name}</h3>
+
+                    {/* seller status showing */}
 
                     {
                         userDetails.map(check =>

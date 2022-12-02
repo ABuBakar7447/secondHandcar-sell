@@ -4,6 +4,8 @@ import React from 'react';
 const Blog = () => {
 
     return (
+
+        // questionaries part
         <div className='w-3/5 mx-auto my-5'>
             <div className='border rounded bg-slate-400 mb-4 p-2'>
                 <p className='text-yellow-400 font-bold'>1. What are the different ways to manage a state in a React application?</p>

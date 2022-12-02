@@ -4,6 +4,7 @@ const useBuyer = email => {
     const [isBuyer, setBuyer] = useState(false);
     const [buyerLoading, setBuyerLoading] = useState(true)
 
+    //buyer route checking
     useEffect(() => {
         if (email) {
             fetch(`https://second-hand-product-server.vercel.app/buyer/${email}`)
