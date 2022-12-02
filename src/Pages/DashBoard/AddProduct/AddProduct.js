@@ -24,7 +24,8 @@ const AddProduct = () => {
     const navigate = useNavigate();
 
 
-
+    //seller product adding part 
+    
     const handleProduct = data => {
         const image = data.image[0];
         console.log(image)
@@ -32,6 +33,7 @@ const AddProduct = () => {
         formData.append('image', image);
 
         // const url = `https://api.imgbb.com/1/upload?key=${imgbb}`
+
         fetch(`https://api.imgbb.com/1/upload?key=${imgbb}`, {
             method: 'POST',
             body: formData

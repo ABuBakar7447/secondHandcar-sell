@@ -3,7 +3,7 @@ import React from 'react';
 
 const VerifiedCheck = ({ seller_email }) => {
 
-
+    // this card not connected with any page
     const { data: userDetails = [] } = useQuery({
 
         queryKey: ['seller'],

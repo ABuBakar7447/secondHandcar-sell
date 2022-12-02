@@ -5,6 +5,7 @@ const AllBuyer = () => {
     const [buyerDetails, setBuyerDetails] = useState([])
     console.log(buyerDetails)
 
+    //all buyer data loading 
     useEffect(() => {
         fetch('https://second-hand-product-server.vercel.app/buyer')
             .then(res => res.json())

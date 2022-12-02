@@ -1,12 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
-// import React, { useEffect, useState } from 'react';
+
 import {FaCheckCircle} from 'react-icons/fa';
 
 
 const AllSeller = () => {
 
-    // const [userDetails, setUserDetails] = useState([])
-    // console.log(userDetails)
+    
+//all seller data loading ,removing seller, verification 
 
     const {data: userDetails = [], refetch} = useQuery({
         queryKey: ['seller'],
@@ -16,11 +16,7 @@ const AllSeller = () => {
             return data;
         }
     });
-    // useEffect(()=>{
-    //     fetch('https://second-hand-product-server.vercel.app/seller')
-    //     .then(res => res.json())
-    //     .then(data => setUserDetails(data))
-    // },[])
+    
 
     const handleUserDelete = id => {
         const proceed = window.confirm('Do you want to remove this user?');
