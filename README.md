@@ -27,6 +27,3 @@ First I have installed react and then created route of my project. Then I have c
  * email: abu15-3782@diu.edu.bd
  * password:123456
 
- “*”
-
- * 
