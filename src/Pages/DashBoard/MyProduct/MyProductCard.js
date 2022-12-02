@@ -1,6 +1,7 @@
 import React from 'react';
+import {FaTrash} from 'react-icons/fa';
 
-const MyProductCard = ({sellerProduct, handleDelete}) => {
+const MyProductCard = ({sellerProduct, handleDelete, advertiseHandle}) => {
 
     const {img_url,product_name, location, resale_price, original_price, post_date, seller_name, product_status, _id} = sellerProduct
     return (
@@ -18,8 +19,14 @@ const MyProductCard = ({sellerProduct, handleDelete}) => {
                     <h3 className='font-bold'>Product Status: <span className='text-yellow-400'>{product_status}</span></h3>
 
                     <div className=' md:flex lg:flex-row flex-col m-5 justify-center'>
-                    <button  onClick={()=>handleDelete(_id)} className='font-bold btn btn-error m-5'>Delete Product</button>
-                    <button className="font-bold btn btn-warning m-5">Advertise Product</button>
+
+                    <div className='flex font-bold btn m-5'  onClick={()=>handleDelete(_id)}
+                    ><span>Delete  Product</span><span className='p-1.5 pl-1'><FaTrash></FaTrash></span></div>
+
+                   
+
+                    <button onClick={()=>advertiseHandle(_id)} className="font-bold btn btn-warning m-5">Advertise Product</button>
+
                     </div>
 
                     

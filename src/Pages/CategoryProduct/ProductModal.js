@@ -1,5 +1,8 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const ProductModal = ({modalData}) => {
     const {user} = useContext(AuthContext)
@@ -36,6 +39,7 @@ const ProductModal = ({modalData}) => {
         .then(res => res.json())
         .then(data =>{
             console.log(data);
+            toast.success("You have booked this product succfully")
             
 
         })
@@ -108,6 +112,7 @@ const ProductModal = ({modalData}) => {
                 
                 <div className="form-control mt-6">
                     <input htmlFor="my-modal-3" type="submit" className="btn btn-primary" value="Book" />
+                    <ToastContainer/>
                 </div>
             </form>
             </div>

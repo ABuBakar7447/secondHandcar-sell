@@ -1,39 +1,50 @@
 
-import React, { useContext, useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React, { useContext} from 'react';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import MyProductCard from './MyProductCard';
+
 
 const MyProduct = () => {
     const {user} = useContext(AuthContext);
 
 
-    const [productDetails, setProductDetails] = useState([])
-    console.log(productDetails)
+    // const [productDetails, setProductDetails] = useState([])
+    // console.log(productDetails)
 
     //collecting data base on user email
     
-    useEffect(() => {
-        fetch(`http://localhost:5000/product?seller_email=${user?.email}`,{
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/product?seller_email=${user?.email}`,{
             
-            headers: {
-                    authorization: `bearer ${localStorage.getItem('tokenForAccess')}`
+    //         headers: {
+    //                 authorization: `bearer ${localStorage.getItem('tokenForAccess')}`
                     
-                }
-            }
-        )
-            .then(res => res.json())
-            .then(data => setProductDetails(data))
-    }, [user?.email])
+    //             }
+    //         }
+    //     )
+    //         .then(res => res.json())
+    //         .then(data => setProductDetails(data))
+    // }, [user?.email])
 
 
-    // const {data : productDetails= []} = useQuery({
-    //     queryKey: ['product'],
-    //     queryFn: async() => {
-    //         const res = await fetch(`http://localhost:5000/product?seller_email=${user?.email}`);
-    //         const data = await res.json();
-    //         return data;
-    //     }
-    // })
+    const {data : productDetails= [],refetch} = useQuery({
+        queryKey: ['product'],
+        queryFn: async() => {
+            const res = await fetch(`http://localhost:5000/product?seller_email=${user?.email}`,{
+            
+                headers: {
+                        authorization: `bearer ${localStorage.getItem('tokenForAccess')}`
+                        
+                    }
+                });
+            const data = await res.json();
+            return data;
+        }
+    })
+
+
+
 
 
     const handleDelete = id => {
@@ -48,12 +59,28 @@ const MyProduct = () => {
                     console.log(data);
                     if (data.deletedCount > 0) {
                         alert('your product deleted successfully')
-                        const leftProDet = productDetails.filter(del => del._id !== id);
-                        setProductDetails(leftProDet)
+                        
+                        refetch()
                     }
                 })
         }
     }
+
+
+
+    const advertiseHandle = id =>{
+        fetch(`http://localhost:5000/newrole/${id}`,{
+            method: 'PUT'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.modifiedCount>0){
+                
+            }
+        })
+    }
+
 
 
 
@@ -64,6 +91,7 @@ const MyProduct = () => {
                         productDetails?.length && productDetails.map(sellerProduct =><MyProductCard key={sellerProduct._id}
                             sellerProduct={sellerProduct}
                             handleDelete={handleDelete}
+                            advertiseHandle={advertiseHandle}
                             ></MyProductCard>
                         )
                     }

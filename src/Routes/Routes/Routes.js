@@ -7,11 +7,14 @@ import AddProduct from "../../Pages/DashBoard/AddProduct/AddProduct";
 import AllBuyer from "../../Pages/DashBoard/AllBuyer/AllBuyer";
 import AllSeller from "../../Pages/DashBoard/AllSeller/AllSeller";
 import Dashboards from "../../Pages/DashBoard/DashBoards/Dashboards";
+import MyBooking from "../../Pages/DashBoard/MyBookIng/MyBooking";
 import MyProduct from "../../Pages/DashBoard/MyProduct/MyProduct";
 import Home from "../../Pages/Home/Home";
 import LogIn from "../../Pages/LogIn/LogIn";
 import SignUp from "../../Pages/SignUp/SignUp";
+import Undirected from "../../Pages/UndirectedPage/Undirected";
 import AdminPrivate from "../AdminPrivate/AdminPrivate";
+import BuyerPrivate from "../BuyerPrivate/BuyerPrivate";
 import Private from "../Private/Private";
 import SellerPrivate from "../SellerPrivate/SellerPrivate";
 
@@ -42,6 +45,10 @@ const router = createBrowserRouter([
                 element:<Private><CategoryProduct></CategoryProduct></Private>,
                 loader: ({params}) => fetch(`http://localhost:5000/products?product_category=${params.category_name}`)
             },
+            {
+                path:'*',
+                element:<Undirected></Undirected>
+            },
 
         ]
     },
@@ -68,6 +75,10 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard/allbuyer',
                 element:<AdminPrivate><AllBuyer></AllBuyer></AdminPrivate>,
+            },
+            {
+                path:'/dashboard/myorder',
+                element:<BuyerPrivate><MyBooking></MyBooking></BuyerPrivate>,
             },
         ]
         

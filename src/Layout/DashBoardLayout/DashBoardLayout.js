@@ -2,13 +2,16 @@ import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import useAdmin from '../../Hooks/useAdmin';
+import useBuyer from '../../Hooks/useBuyer';
 import useSeller from '../../Hooks/useSeller';
+import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 
 const DashBoardLayout = () => {
     const {user} = useContext(AuthContext)
     const [isAdmin] = useAdmin(user?.email)
     const [isSeller] = useSeller(user?.email)
+    const [isBuyer] = useBuyer(user?.email)
     return (
         <div>
             
@@ -27,7 +30,12 @@ const DashBoardLayout = () => {
                 <div className="flex-none hidden lg:block">
                     <ul className="menu menu-horizontal">
                     {/* <!-- Navbar menu content here --> */}
-
+                    {
+                        isBuyer && <>
+                        <li><Link to='/dashboard/myorder'>Myorder</Link></li>
+                        </>
+                    }
+                    
 
                     {
                         isAdmin &&
@@ -52,6 +60,7 @@ const DashBoardLayout = () => {
                 </div>
                 </div>
                 <Outlet></Outlet>
+                <Footer></Footer>
                 
             </div> 
             <div className="drawer-side">
@@ -59,6 +68,11 @@ const DashBoardLayout = () => {
                 <ul className="menu p-4 w-80 bg-base-100">
                 {/* <!-- Sidebar content here --> */}
                     
+                    {
+                        isBuyer && <>
+                        <li><Link to='/dashboard/myorder'>Myorder</Link></li>
+                        </>
+                    }
 
                     {
                         isAdmin &&
@@ -81,7 +95,9 @@ const DashBoardLayout = () => {
                 </ul>
                 
             </div>
+            
             </div>
+            
         </div>
     );
 };

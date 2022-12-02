@@ -1,5 +1,5 @@
 import { GoogleAuthProvider } from 'firebase/auth';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import useToken from '../../Hooks/useToken';
@@ -13,9 +13,11 @@ const SignUp = () => {
     const navigate = useNavigate();
     console.log(userEmail)
 
+   useEffect(()=>{
     if(token){
         navigate('/')
     }
+   },[navigate,token])
     
 
     const handleSignUp= event => {
@@ -114,7 +116,7 @@ const SignUp = () => {
                         <select className='font-bold p-2 rounded border-2 border-indigo-600' value={value} onChange={e=>setValue(e.target.value)} name="companysize" id="company-size" required>
                         <option >Buyer</option>
                         <option>Seller</option>
-                        <option>Admin</option>
+                        
                         </select>
                     </div>
                     

@@ -6,6 +6,11 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
+import { toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 
 const AddProduct = () => {
 
@@ -70,12 +75,17 @@ const AddProduct = () => {
                     console.log(result);
                     
                     navigate('/dashboard/myproduct')
+                    
+                    
                 })
             }
         })
     }
 
+    const notify = () => {toast("Product added successfully")
     
+    
+    };
 
     return (
         <div className='my-10 w-3/4 mx-auto'>
@@ -200,7 +210,8 @@ const AddProduct = () => {
                 {errors.des && <p className='text-red-600'>{errors.des.message}</p>}
             </div>
 
-            <input className='btn btn-primary w-full mt-4' value="Add Product" type="submit" />
+            <input onClick={notify} className='btn btn-primary w-full mt-4' value="Add Product" type="submit" />
+            <ToastContainer />
             </form>
             </div>
         </div>
